@@ -1,0 +1,140 @@
+#holder {
+  width: 1000px;
+  font-family: arial, sans serif;
+  font-size: 12px;
+  position: fixed;
+  bottom:230px;
+}
+.box {
+  float: left;
+  width: 60%;
+  height:25%;
+  background-image:-webkit-linear-gradient(bottom left,#ecf0f1 10%,#ecf0f1);
+  border-radius:10px 10px 10px 10px;
+  box-shadow: 0 1px 1px #999;
+  margin-left:30px;
+  -webkit-animation: slidein 0.5s;
+}
+
+.user-pic {
+  margin-top:20px;
+  margin-left:10px;
+  float: left;
+  width: 50px;
+  height: 50px;
+}
+.user-pic img {
+  border-radius: 100%;
+  box-shadow: 0 0 20px 0 #fff;
+  width: 50px;
+  height: 50px;
+  -webkit-animation: turnpic 0.1s infinite alternate;
+}
+
+.user-pic img:hover {
+  -webkit-animation-play-state: paused;
+  -webkit-filter: sepia(100%);
+}
+
+.comment-box {
+  float: left;
+  width: 85%;
+  margin-left: 8px;
+}
+.comment-box textarea {
+  color:black;
+  width: 100%;
+  height: 40%;
+  padding: 8px;
+  margin:20px 0 3px 10px;
+  border:1px solid #fff;
+  box-shadow: inset 0 0 8px rgba(0,0,0,0.2);
+  border-radius:5px;
+  font-family: 'arial','sans serif';
+}
+
+.comment-button {
+    float:right;
+}
+@-webkit-keyframes turnpic {
+  0% { -webkit-transform: rotate(45deg);  }
+  50% {-webkit-transform: rotate(50deg);  }
+  100% { -webkit-transform: rotate(55deg); }
+}
+@-webkit-keyframes slidein {
+  from {    margin-left: 100%;   width: 300%  }
+  to {  margin-left: 0%;  width: 100%;  }
+}
+
+.entry-content {
+  width:100%;
+  margin:0 auto;
+  border:5px solid #ECECEC;
+}
+
+.embed-comments {
+  text-align:left;
+  margin-top:20px;
+}
+
+.entry-content .ufithumb {
+  width:32px;
+  height:32px;
+  display:block;
+  border:none;
+  vertical-align:top;
+}
+
+.ufithumblnk {
+  display:block;
+}
+
+.ufithumbwrap {
+  float:left;
+}
+
+.clearfix:after {
+  clear:both;
+  content:".";
+  display:block;
+  font-size:0;
+  height:0;
+  line-height:0;
+  visibility:hidden;
+}
+
+.entry-content .UFIRow {
+  background-color:#fafbfb;
+  border:0;
+  margin:1px 0 0;
+  padding:6px;
+}
+
+.UFIImageBlockContent {
+  margin:0;
+  padding:0 0 0 8px;
+  overflow:hidden;
+}
+
+.UFICommentContentBlock {
+  position:relative;
+}
+
+.entry-content .UFICommentContent {
+  font-family:Helvetica, Arial, 'lucida grande',tahoma,verdana,arial,sans-serif;
+  font-size:12px;
+  line-height:1.28;
+}
+
+.entry-content a {
+  font-weight:700;
+  color:#3b5998;
+  text-decoration:none;
+}
+
+.fb-out {
+  clear:both;
+  display:block;
+  text-align:right;
+  font-size:11px;
+}

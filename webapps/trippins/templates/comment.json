@@ -1,0 +1,8 @@
+{
+  "comment": {
+    "username": "{{comment.user.user.username}}",
+    "id": "{{comment.user.id}}",
+    "date":"{{comment.date}}",
+    "content":"{{comment.content}}"
+  }
+}

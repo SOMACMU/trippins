@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  {% load staticfiles %}
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" href="{% static "images/trippins.png" %}">
+  <!-- Bootstrap core library -->
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" >
+  <link rel="stylesheet" type="text/css" href="{% static 'authentication/css/main.css'%}">
+  <title>Trip Pins</title>
+</head>
+
+<body>
+  <video id="videobcg" preload="auto" autoplay="true" loop="loop" muted="muted" volume="0">
+     <source src="/static/authentication/videos/Aurora.mp4" type="video/mp4">
+          Sorry, your browser does not support HTML5 video.
+  </video>
+
+  <div id="signup-container" class="container">
+      <div class="login-align">
+        <form method="post">
+          {% csrf_token %}
+          <h3 class="form-login-heading">Join Trip Pins</h3>
+          <div class="error-message">{{ form.non_field_errors.values }}</div>
+          <table>
+            {% for field in form %}
+              <tr>
+              <td>{{ field }}</td><td class="error-message">{{field.errors}}</td>
+            </tr>
+            {% endfor %}
+          </table>
+          <div class="login-options">
+            <button id="signup-btn" class="btn login-btn" type="submit">
+              Sign Up
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <div id="singup-margin" class="login-align signup-options">
+        <p>
+          Already have an account?
+          <a id="login-link" href={% url 'login' %}>Log in now »</a>
+        </p>
+      </div>
+  </div>
+
+</body>
+
+</html>

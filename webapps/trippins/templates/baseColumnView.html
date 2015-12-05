@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	{% load staticfiles %}
+	<title>{% block title %}basic post view{% endblock %}</title>
+	<meta charset="utf-8" />
+	<link rel="icon" type="image/png" href="{% static "images/trippins.png" %}">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	{% block css %}
+	<link rel="stylesheet" href="{% static 'core/css/sidebar.css' %}" />
+	{% endblock %}
+
+	{%block script%}
+	{% endblock %}
+	<script src="{% static "core/js/core.js" %}" type="text/javascript"></script>
+</head>
+
+<body {% block bodyclass %}{% endblock %}>
+	<nav id="sidebar">
+		<ul class="dots">
+    <li>
+      <a href="{% url 'index' %}">
+        <i class="glyphicon glyphicon-home"></i>
+		<span class="nav-text">
+			Global Stream
+		</span>
+      </a>
+    </li>
+		<li>
+      <a href="{% url 'map' %}" title="Global">
+      	<i class="glyphicon glyphicon-map-marker"></i>
+		<span class="nav-text">
+				Discover the World
+		</span>
+      </a>
+    </li>
+    <li>
+      <a href="{% url 'timeline' %}" title="Timeline">
+      	<i class="glyphicon glyphicon-time"></i>
+      	<span class="nav-text">
+				Memories
+		</span>
+      </a>
+    </li>
+    <li>
+      <a href="{% url 'feed' %}" title="New Message" id="message">
+	      <i class="glyphicon glyphicon-inbox"></i>
+	      <span class="nav-text">
+	      		Home feed
+	      </span>
+      </a>
+    </li>
+    <li>
+      <a href="{% url 'logout' %}" title="Log out">
+      		<i class="glyphicon glyphicon-log-out" alt="log out"></i>
+			<span class="nav-text" alt="log out">
+				Log Out
+			</span>
+      </a>
+    </li>
+  	</ul>
+	</nav>
+
+	<div id="main">
+		{% block main %} {% endblock %}
+	</div>
+
+	<div id="viewer">
+		{% block viewer %}{% endblock %}
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Trip Pins</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		{% load staticfiles %}
+		<link rel="icon" type="image/png" href="{% static "images/trippins.png" %}">
+		<link rel="stylesheet" href="{% static "core/css/thumbnails.css" %}" />
+		<link rel="stylesheet" href="{% static "album/css/main.css" %}" />
+		<link rel="stylesheet" href="{% static "album/css/comment.css" %}">
+		</head>
+		<body class="is-loading-0 is-loading-1 is-loading-2">
+			<!-- Main -->
+			<div id="main">
+
+					<!-- Header -->
+					<header id="header">
+						<h1>{{description}}</h1>
+						<h2><a href="{% url 'timeline' userid %}">{{author}}</a></h2>
+					</header>
+
+					<!-- Thumbnail -->
+					<section id="thumbnails">
+						{% for photo in photos %}
+						<article>
+
+							<a class="thumbnail" href="{{ photo.image.url|safe }}" data-position="left center"><img src="{{ photo.image.url|safe }}" alt="" /></a>
+							<h2></h2>
+							<p></p>
+
+							<a href = "javascript:void(0)" onclick = "showComment({{photo.id}})" class="button">Comment</a>
+              <div id="light{{photo.id}}" class="white_content">
+							<div class="box">
+						    <div class="user-pic"><img src="{{avatar}}" /></div>
+							  <div class="comment-box">
+							    <textarea id="comment-box{{photo.id}}" placeholder="Write something..."></textarea>
+							    <button class="button comment-button" onclick="hideComment({{photo.id}})">Cancel</button>
+							    <button class="button comment-button" onclick="sendComment({{photo.id}})">Submit</button>
+							  </div>
+							</div>
+							</div>
+						</article>
+						{%  endfor %}
+					</section>
+
+					<div class="entry-content">
+  						<div class="embed-comments" data-post-id="{{pid}}"></div>
+					</div>
+			</div>
+
+			<!-- nav helpers -->
+			<div id="viewer">
+				<div class="inner">
+					<div class="hamb" id="back">
+						<div class="one"></div>
+						<div class="two"></div>
+						<div class="three"></div>
+					</div>
+					<div class="nav-next">
+						<div class="one"></div>
+						<div class="three"></div>
+					</div>
+					<div class="nav-previous">
+						<div class="three"></div>
+						<div class="one"></div>
+					</div>
+					<div id="toggle" class="toggle on">
+						<div class="one"></div>
+						<div class="two"></div>
+						<div class="three"></div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Scripts -->
+			<script src="{% static "core/js/jquery.min.js" %}"></script>
+			<script src="{% static "album/js/skel.min.js" %}"></script>
+			<script src="{% static "album/js/main.js" %}"></script>
+			<script src="{% static "album/js/helper.js" %}"></script>
+
+	</body>
+</html>

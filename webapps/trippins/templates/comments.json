@@ -1,0 +1,8 @@
+{
+  "comments":[
+    {% for comment in comments %}
+    {% spaceless %}{% include 'comment.json' %}{% endspaceless %}
+    {% if not forloop.last %}, {% endif %}
+    {% endfor %}
+  ]
+}

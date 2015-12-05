@@ -1,0 +1,126 @@
+body {
+    background:#48486b;
+    font-size:18px;
+    color:#fff;
+}
+
+
+form{
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+}
+.row{
+  >div{
+    width: 33.33333333333333%;
+    display:inline-block;
+    margin-right:-5px;
+    position: relative;
+    &:after{
+      content: '';
+      border-right: 1px solid rgba(255,255,255,.7);
+      position: absolute;
+      top: 3px;
+      height: 75%;
+      right: -3px;
+    }
+    &:last-child:after{
+      display:none;
+    }
+  }
+}
+h1{
+  font-weight: 300;
+  font-size: 26px;
+  line-height: 3;
+  margin-bottom: 25px;
+  text-align: center;
+  .fa-camera-retro{
+    $size: 100px;
+    width: $size;
+    height: $size;
+    line-height: $size;
+    border: 2px solid #fff;
+    cursor: pointer;
+    @include border-radius(50%);
+    @include transition(background-color .3s ease);
+    &:hover{
+      background-color: rgba(255,255,255,.2);
+    }
+  }
+}
+
+.btn{
+  font-family: 'Lato', sans-serif;
+  border: none;
+  width: 100%;
+  display:block;
+  padding: 15px;
+  background-color: #fff;
+  font-size: 18px;
+  color: #2ecc71;
+  cursor: pointer;
+  @include transition(all .3s ease);
+  @include border-radius(0);
+  &:hover,
+  &:focus{
+    color: #333;
+    outline: none;
+  }
+}
+#clear{
+  background: none;
+  color: #fff;
+  font-weight: 100;
+}
+
+.float-label {
+  position: relative;
+  margin-bottom: 10px;
+}
+.float-label label, .float-label input, .float-label select, .float-label textarea {
+  font-family: 'Lato', sans-serif;
+  font-size: 24px;
+  font-weight: 300;
+}
+.float-label input, .float-label select, .float-label textarea {
+  -webkit-appearance: none;
+  outline: none;
+  border: none;
+  width: 100%;
+  display: block;
+  cursor: pointer;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  font-family: 'Lato', sans-serif;
+  font-size: 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+  background: transparent;
+  color: #fff;
+  padding: 15px 20px 10px 10px;
+}
+.float-label input {
+  padding-left:100px;
+}
+.float-label label {
+  position: absolute;
+  left: 10px;
+  top: 18px;
+  color: #fff;
+  pointer-events: none;
+  -moz-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+.float-label label.active {
+  font-size: 14px;
+  font-weight: 400;
+  top: -1px;
+  color: rgba(0, 0, 0, 0.7);
+}
+.float-label textarea {
+  height: 100px;
+  resize: none;
+}

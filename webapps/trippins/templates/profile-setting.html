@@ -1,0 +1,52 @@
+{% extends "baseColumnView.html" %}
+{% load staticfiles %}
+{% block title %}time line{% endblock %}
+{% block css %}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" >
+<link rel="stylesheet" href="{% static 'core/css/sidebar.css' %}" />
+<link rel="stylesheet" href="{% static 'core/css/profile-setting.css'%}">
+
+{% endblock %}
+{% block script %}
+<script src="{% static "core/js/jquery.min.js" %}" type="text/javascript"></script>
+<script src="{% static "core/js/jquery.slides.min.js" %}" type="text/javascript"></script>
+<script src="{% static "core/js/update_profile.js" %}"></script>
+{% endblock %}
+{% block main %}
+<div class="login-align">
+        <form method="post" enctype="multipart/form-data">
+          {% csrf_token %}
+          <h1>Update your profile</h1>
+          <div>
+            {% for field in form.visible_fields %}
+            <div class="float-label">
+            {{ field }}
+            <label for="{{field.name}}">{{field.label}}</label>
+        	</div>
+            {% endfor %}
+          </div>
+
+           <button id="signup-btn" class="btn" type="submit">
+              Update
+            </button>
+        </form>
+</div>
+<div class="login-align">
+        <form method="post">
+          {% csrf_token %}
+          <h1>Update your password</h1>
+          <div>
+            {% for field in password_form.visible_fields %}
+            <div class="float-label">
+              {{ field }}
+              <label for="{{field.name}}">{{field.label}}</label>
+            </div>
+            {% endfor %}
+          </div>
+
+           <button id="signup-btn" class="btn" type="submit">
+              Update
+            </button>
+        </form>
+</div>
+{% endblock %}

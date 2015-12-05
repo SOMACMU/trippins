@@ -1,0 +1,52 @@
+{% extends "baseColumnView.html" %}
+
+{% load staticfiles %}
+{% load icanhaz %}
+
+{% block title %}Discover the World{% endblock %}
+{% block script %}
+<link rel="icon" type="image/png" href="{% static "images/trippins.png" %}">
+<link rel="stylesheet" href="{% static 'map/css/map-view.css' %}" />
+<link rel="stylesheet" href="{% static 'core/css/thumbnails.css' %}" />
+<link href="/static/core/css/font-awesome.css" rel="stylesheet"/>
+<link href="/static/map/css/score.css" rel="stylesheet"/>
+<script type='text/javascript' src="https://maps.googleapis.com/maps/api/js?sensor=false&key=AIzaSyA3ozF-YUFxDyP3SGJ8pLAWAGb9BSJPnDw&libraries=places"></script>
+<script type="text/javascript" src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/infobox/src/infobox.js"></script>
+<script src="{% static "core/js/jquery.min.js" %}" type="text/javascript"></script>
+<script src="{% static "core/js/jquery.slides.min.js" %}" type="text/javascript"></script>
+<script src="{% static "core/js/skel.min.js"%}" type="text/javascript"></script>
+<script src="{% static "map/js/map.js" %}" type="text/javascript"></script>
+<script src="{% static "map/js/mapView.js" %}" type="text/javascript"></script>
+<script src="{% static "map/js/markerclusterer.js" %}" type="text/javascript"></script>
+<script src="{% static "map/js/rating.js" %}" type="text/javascript"></script>
+<script src="{% static "core/js/ICanHaz.js" %}" type="text/javascript"></script>
+
+{% endblock %}
+
+{% block bodyclass %}class="is-loading-0 is-loading-1 is-loading-2 fullscreen"{% endblock %}
+{% block main %}
+
+{% icanhaz "pinDetail" %}
+
+{% endblock %}
+
+{% block viewer %}
+
+<div class = "inner">
+	<div id="toggle" class="toggle">
+		<div class="one"></div>
+		<div class="two"></div>
+		<div class="three"></div>
+	</div>
+	<div id="menu"></div>
+</div>
+
+<input id="pac-input" class="controls" type="text" placeholder="Search Box">
+
+<div id="light" class="white_content">
+
+</div>
+<div id="fade" class="black_overlay"></div>
+<div id="map"></div>
+
+{% endblock %}

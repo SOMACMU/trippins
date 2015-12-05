@@ -1,0 +1,11 @@
+<div id="header" data-pid={{pid}} data-uid={{uid}}>
+	<h1 class="align-right"><a href="javascript:viewPin()">{{description}}</a></h1>
+	<h2 class="align-right"><a href="javascript:timeline()">{{author}}</a></h2>
+</div>
+
+<div class="blue circle" id="score-label"></div>
+
+<div id="rating"></div>
+<section id="thumbnails">
+	{{#photos}}<article><a class="thumbnail" data-position="left center"><img src={{photo.url}}></a></article>{{/photos}}
+</section>

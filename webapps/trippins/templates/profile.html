@@ -1,0 +1,94 @@
+{% extends "baseColumnView.html" %}
+
+{% load staticfiles %}
+
+{% block title %}Trippins{% endblock %}
+{% block script %}
+<link rel="stylesheet" href="{% static 'profile/css/main.css' %}" />
+<link href="{% static "profile/css/delete.css" %}" rel="stylesheet">
+<link href="{% static "profile/css/profile.css" %}" rel="stylesheet">
+
+<script type='text/javascript' src="https://maps.googleapis.com/maps/api/js?sensor=false&key=AIzaSyA3ozF-YUFxDyP3SGJ8pLAWAGb9BSJPnDw&libraries=places"></script>
+<script type="text/javascript" src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/infobox/src/infobox.js"></script>
+
+<script src="{% static "profile/js/map.js" %}" type="text/javascript"></script>
+<script src="{% static "profile/js/mapView.js" %}" type="text/javascript"></script>
+<script src="{% static "profile/js/markerclusterer.js" %}" type="text/javascript"></script>
+<script src="{% static "profile/js/rating.js" %}" type="text/javascript"></script>
+<script src="{% static "core/js/jquery.slides.min.js" %}" type="text/javascript"></script>
+<script src="{% static "profile/js/delete.js" %}" type="text/javascript"></script>
+<script src="{% static "profile/js/profile.js" %}" type="text/javascript"></script>
+{% endblock %}
+
+{% block bodyclass %}class="is-loading-0 is-loading-1 is-loading-2 fullscreen"{% endblock %}
+{% block main %}
+
+<header id="header">
+</header>
+
+<section id="score">
+</section>
+
+<section id="thumbnails">
+	<div id="slides">
+	</div>
+</section>
+
+<div class="delete-confirm small">
+	<button class="delete">
+		<i class="fa fa-trash-o fa-lg"></i>
+	</button>
+	<button class="yes">
+		<i class="fa fa-check"></i>
+	</button>
+	<button class="no">
+		<i class="fa fa-close"></i>
+	</button>
+</div>
+
+{% endblock %}
+
+{% block viewer %}
+
+<div class = "inner">
+	<div id="toggle" class="toggle">
+		<div class="one"></div>
+		<div class="two"></div>
+		<div class="three"></div>
+	</div>
+</div>
+
+
+<div id="light" class="white_content"></div>
+
+<div id="fade" class="black_overlay"></div>
+<div id ="profile">
+	<div class="center">
+		<div class="he">
+			<div class="hex1">
+				<div class="hex2">
+					<div class="profile-pic">
+						<img src="{{avatar}}"/>
+                        <div class="overlay">
+                            <span>Update Your Avatar</span>
+                        </div>
+					</div>
+					<div class="profile-info">
+						<h3>{{user}}</h3>
+						<ul>
+							<li><i class="fa fa-twitter fa-2x"></i></li>
+							<li><i class="fa fa-facebook fa-2x"></i></li>
+							<li><i class="fa fa-instagram fa-2x"></i></li>
+						</ul>
+						<div id="follow-div">
+						<a class="btn btn-follow" id="follow-btn">{{ follow }}</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="map"></div>
+
+{% endblock %}

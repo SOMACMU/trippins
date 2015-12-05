@@ -1,0 +1,36 @@
+<a class="close-thin" onclick="cancelPin({{pinid}})"></a>
+    <div class="private-pin">
+	    <label width="26" height="26">Private Pin</label>
+	    <div class="checkboxWrapper">
+			<input type="checkbox" id="myCheckbox"/>
+			<label for="myCheckbox" class="privateCheckbox">
+				<svg class="checkmark" width="26" height="26">
+					<path d="m12,23 l14,-14"
+					      style="stroke-dasharray: 27px;"></path>
+					<path d="m12,23 l-8,-9"
+					      style="stroke-dasharray: 11px;"></path>
+				</svg>
+				<svg class="cross" width="26" height="26">
+					<path d="m15,16 l-8,-8"
+					      style="stroke-dasharray: 13px;"></path>
+					<path d="m15,16 l8,8"
+					      style="stroke-dasharray: 13px;"></path>
+					<path d="m15,16 l-8,8"
+					      style="stroke-dasharray: 13px;"></path>
+					<path d="m15,16 l8,-8"
+					      style="stroke-dasharray: 13px;"></path>
+				</svg>
+			</label>
+		</div>
+	</div>
+    <div id="desc">
+			<textarea placeholder="Description" class='pin-desc'></textarea>
+    </div>
+
+    <div>
+      {% load jfutags %}
+      {% jfu 'fileuploader.html'  pid=pinid %}
+    </div>
+    <button id="create-btn" onclick="createPin({{pinid}})">
+  <span>Create</span>
+</button>

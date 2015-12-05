@@ -1,0 +1,13 @@
+{
+  "pid": "{{ pid }}",
+  "description": "{{ description }}",
+  "uid": "{{ uid }}",
+  "author": "{{ author }}",
+  "time": "{{ time }}",
+  "photos":[
+    {% for photo in photos %}
+    {% spaceless %}{% include 'photo.json' %}{% endspaceless %}
+    {% if not forloop.last %}, {% endif %}
+    {% endfor %}
+  ]
+}

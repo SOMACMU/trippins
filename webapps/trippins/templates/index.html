@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html>
+	{% load staticfiles %}
+	<head>
+		<title>Trip Pins</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="icon" type="image/png" href="{% static "images/trippins.png" %}">
+		<link rel="stylesheet" href="{% static 'parallelism/css/main.css' %}" />
+		<link rel="stylesheet" href="{% static 'parallelism/css/turn.css' %}" />
+		<!-- <script>
+			$("body").on("click", "#page-curl", function(){window.location.replace("/map")} );
+		</script> -->
+	</head>
+	<body>
+		<div id="wrapper">
+			<div class="page-corner">
+			  <div class="page-corner-bg"></div>
+			  <div class="page-corner-txt" id="page-curl"></div>
+			  <div class="page-corner-curl"></div>
+			</div>
+			<div id="main">
+				<div id="reel">
+					<div id="header" class="item" data-width="400">
+						<div class="inner"><a href={% url 'map' %}>
+							<h1>Trip Pins</h1>
+							<p><b id="breath-label">Pin</b> down<br />
+							your trips >> </p></a>
+						</div>
+					</div>
+					{% for pin in pins %}
+					<article class="item thumb" data-width="282">
+						<h2>{{pin.pin.description}}</h2>
+						<a href="{% url 'album' pin.pin.id %}"><img src="{{pin.cover.image.url|safe}}" alt=""></a>
+					</article>
+					{% endfor %}
+				</div>
+			</div>
+
+			<div id="footer">
+				<div class="left">
+					<p>This is <strong>Trip Pins</strong>, a place to <strong>pin</strong> your trip and share with the world.
+				</div>
+				<div class="right">
+					<ul class="contact">
+						<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+						<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon fa-envelope"><span class="label">Email</span></a></li>
+					</ul>
+					<ul class="horizontal">
+						<li><a href={% url 'logout' %}>Log out</a></li>
+					</ul>
+				</div>
+			</div>
+
+		</div>
+
+		<script src="{% static 'core/js/jquery.min.js' %}"></script>
+		<script src="{% static 'parallelism/js/jquery.poptrox.min.js' %}"></script>
+		<script src="{% static 'parallelism/js/skel.min.js' %}"></script>
+		<script src="{% static 'parallelism/js/skel-viewport.min.js' %}"></script>
+		<script src="{% static 'parallelism/js/util.js' %}"></script>
+		<script src="{% static 'parallelism/js/main.js' %}"></script>
+		<script src="{% static 'parallelism/js/curl.js' %}"></script>
+	</body>
+</html>

@@ -1,0 +1,12 @@
+<article id={{p.id}}>
+	<header style="padding-left: 5%; padding-right: 5%;" onclick="pinChosen({{p.id}}, {{p.latitude}}, {{p.longtitude}})">{{p.description}}
+	{% if self %}
+		<a class="delete" onclick="delete_pin({{p.id}})">
+			<div class="delete-btn"><img src="/static/images/delete.png"></div>
+		</a>
+	{% endif %}</header>
+
+    <input type="hidden" name="pid" value={{p.id}}></input>
+    <input type="hidden" name="lat" value={{p.latitude}}></input>
+    <input type="hidden" id="longitude" name="long" value={{p.longtitude}}></input>
+</article>

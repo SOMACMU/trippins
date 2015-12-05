@@ -1,0 +1,8 @@
+{
+  "pin": {
+    "id":"{{ pin.id|safe }}",
+    "date":"{{ pin.date|safe }}",
+    "title":"{{ pin.description|safe }}",
+    "user":"{{ pin.user.user.username|safe}}"
+  }
+}

@@ -1,0 +1,94 @@
+.page-corner-bg {
+  width: 300px;
+  height: 300px;
+  /*background: #6A707C;*/
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin-top: -90px;
+  margin-left: -113px;
+  transform: rotate(-36.87deg);
+  animation-duration: 8s;
+  animation-iteration-count: infinite;
+}
+.page-corner-bg:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /*animation-name: curl-bg-pattern;*/
+  animation-duration: 8s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes curl-curl {
+  0% {
+    transform: scaleX(1) scaleY(1);
+  }
+  8.33333% {
+    transform: scaleX(1.09) scaleY(1.22625);
+    animation-timing-function: ease-out;
+  }
+  16.66667% {
+    transform: scaleX(1.09) scaleY(1.22625);
+  }
+  31.66667% {
+    transform: scaleX(1) scaleY(1);
+    animation-timing-function: ease-in-out;
+  }
+  40% {
+    transform: scaleX(1) scaleY(1);
+  }
+  42.5% {
+    transform: scaleX(1.045) scaleY(1.11313);
+    /*transform: scaleX(1.09) scaleY(1.22625);*/
+    animation-timing-function: ease-out;
+  }
+  45.83333% {
+    /*transform: scaleX(1.045) scaleY(1.11313);*/
+    transform: scaleX(1.09) scaleY(1.22625);
+  }
+  /*45.83333% {
+    transform: scaleX(1.045) scaleY(1.11313);
+  }*/
+  48.33333% {
+    transform: scaleX(1.09) scaleY(1.22625);
+    animation-timing-function: ease-out;
+  }
+  55% {
+    transform: scaleX(1) scaleY(1);
+    animation-timing-function: ease-in;
+  }
+  100% {
+    transform: scaleX(1) scaleY(1);
+  }
+}
+.page-corner-curl {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 299px;
+  height: 275px;
+  background: url(images/curl.png) top left no-repeat;
+  transform-origin: top left;
+  animation-name: curl-curl;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+}
+.page-corner-txt {
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin-top: 25px;
+  margin-left: 20px;
+  background: url(images/pin-curl.png) center center no-repeat;
+  background-size: 100% 100%;
+  height: 52px;
+  width: 60px;
+}
+.page-corner-bg {
+  cursor:pointer;
+  z-index: 1;
+}

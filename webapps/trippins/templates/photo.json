@@ -1,0 +1,6 @@
+{
+  "photo": {
+    "path": "{{ photo.image|safe }}",
+    "url": "{{photo.image.url|safe}}"
+  }
+}

@@ -1,0 +1,76 @@
+.rating-form {
+  font: 12px 'Arial', 'Helvetica Neue', 'Helvetica', sans-serif;
+  color: #fff;
+
+  box-sizing: border-box;
+  margin-top: 0px;
+  padding: 0;
+  border: 0;
+}
+/* RATING - Form - Item */
+.rating-form .form-item {
+  position: relative;
+  margin: auto;
+  width: 300px;
+  text-align: center;
+  direction: rtl;
+}
+/* remove number on click box */
+.rating-form .ir {
+  position: absolute;
+  left: -9999px;
+}
+/*format two stars*/
+.rating-form .rating-star {
+  display: inline-block;
+  position: relative;
+}
+/*remove check icon*/
+.rating-form input[type='radio'] + label:before {
+  content: attr(data-value);
+  position: absolute;
+  right: 30px;
+  top: 8px;
+  font-size: 30px;
+  font-size: 3rem;
+  opacity: 0;
+  direction: ltr;
+}
+/*selected score*/
+.rating-form input[type='radio']:checked + label::before {
+  right: 25px;
+  opacity: 1;
+}
+.rating-form input[type='radio'] + label:after {
+  content: "/ 5";
+  position: absolute;
+  right: 5px;
+  top: 16px;
+  font-size: 16px;
+  font-size: 1.6rem;
+  opacity: 0;
+  direction: ltr;
+}
+/* show '/5' */
+.rating-form input[type='radio']:checked + label:after {
+  opacity: 1;
+}
+.rating-form label .fa {
+  /*size of stars*/
+  font-size: 6rem;
+}
+.rating-form label .fa-star {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+.rating-form label:hover .fa-star,
+.rating-form label:focus .fa-star,
+.rating-form label:hover ~ label .fa-star,
+.rating-form label:focus ~ label .fa-star,
+.rating-form input[type='radio']:checked ~ label .fa-star {
+  opacity: 1;
+  color: gold;
+}
+

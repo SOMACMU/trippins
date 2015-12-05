@@ -1,0 +1,9 @@
+{
+  "max_pid":"{{ max_pid }}",
+  "pins":[
+    {% for pin in pins %}
+    {% spaceless %}{% include 'pin.json' %}{% endspaceless %}
+    {% if not forloop.last %}, {% endif %}
+    {% endfor %}
+  ]
+}
